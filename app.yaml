@@ -1,5 +1,7 @@
 runtime: nodejs18
 
+service: web
+
 handlers:
   - url: /.*
     secure: always
