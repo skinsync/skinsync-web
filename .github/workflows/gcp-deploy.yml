@@ -9,58 +9,33 @@ on:
       - master
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
+      - name: Setup Node.js and yarn
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-    - name: Build the app
-      run: npm run build
+      - name: Build Next Project
+        run: yarn build
 
-    - name: Archive production artifacts
-      run: tar -czf nextjs-app.tar.gz .next public package.json next.config.js
+      - name: Google Cloud Auth
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: nextjs-app
-        path: nextjs-app.tar.gz
+      - name: Set up Cloud SDK
+        uses: "google-github-actions/setup-gcloud@v2"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: nextjs-app
-        path: .
-
-    - name: Set up Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
-      with:
-        version: 'latest'
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-
-    - name: Authenticate to Google Cloud
-      uses: google-github-actions/auth@v1
-      with:
-        credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-    - name: Decompress artifact
-      run: tar -xzf nextjs-app.tar.gz
-
-    - name: Deploy to App Engine
-      run: |
-        gcloud app deploy --quiet
+      - name: Deploy to Google App Engine
+        run: |
+          gcloud app deploy app.yaml --quiet
