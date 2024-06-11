@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./navbar";
+import { cn } from '@/lib/utils'
+import { poppins, josefin_slab } from "@/lib/font";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar></Navbar>
-        {children}</body>
+    <html lang="en" data-theme="retro">
+      <body className={cn(`${poppins.variable}`, `${josefin_slab.variable}`, 'bg-white')}>
+        {children}
+      </body>
     </html>
   );
 }
