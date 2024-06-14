@@ -9,7 +9,6 @@ export default function HomeLayout({
   return (
     <>
       <Header />
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       {children}
     </>
   );
