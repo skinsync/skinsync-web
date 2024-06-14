@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Team from "@/components/team";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,10 @@ export default function Home() {
 
         <section id="team" className="relative w-full">
           <Team />
+        </section>
+
+        <section id="footer" className="w-full">
+          <Footer />
         </section>
       </div>
     </main>
