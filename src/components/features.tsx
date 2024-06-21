@@ -11,7 +11,7 @@ export default function Features() {
             <h3 className="text-[36px] font-sans">
               Facial skin type detection
             </h3>
-            <Image src="/image-6.png" height={277} width={277} />
+            <Image src="/image-6.png" height={277} width={277} alt="vektor kamera" />
             <p className="text-[18px]">
               scan your face and know your skin type
             </p>
@@ -20,7 +20,7 @@ export default function Features() {
             <h3 className="text-[36px] font-sans text-center">
               Facial Skincare Recommendations
             </h3>
-            <Image src="/image-7.png" height={277} width={277} />
+            <Image src="/image-7.png" height={277} width={277} alt="vektor skincare"/>
             <p className="text-[18px] text-center">
               After knowing your skin type, get <br /> product recommendations for
               your facial skincare
