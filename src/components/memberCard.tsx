@@ -11,7 +11,7 @@ export default function MemberCard({
   pic: string;
 }) {
   return (
-    <div className="card flex flex-col items-center justify-center gap-4 p-4 bg-[#fde7ce] rounded-lg w-[300px]">
+    <div className="card flex flex-col items-center justify-center gap-4 p-4 bg-[#fde7ce] rounded-lg w-[300px] text-[#595455] drop-shadow-2xl">
       <div className="avatar px-4 pt-4">
         <div className="w-48 rounded-full">
           <Image src={pic} width={192} height={192} alt={`${name}_${learningPath}_profile`} />

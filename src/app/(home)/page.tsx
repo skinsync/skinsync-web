@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Team from "@/components/team";
+import Features from "@/components/features";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -12,6 +13,17 @@ export default function Home() {
 
         <section id="hero" className="relative w-full">
           <Hero />
+        </section>
+
+        <section id="" className="relative w-full mt-16">
+          <div className="bg-[#FEE0C0] text-center text-5xl py-8 font-italiano text-[#595455]">
+            know your skin problems and get your skincare recommendations
+          </div>
+          <img src="/image-8.png" alt="tutorial" className="w-full"/>
+        </section>
+
+        <section id="features" className="w-full mt-16">
+          <Features />
         </section>
 
         <section id="team" className="relative w-full">

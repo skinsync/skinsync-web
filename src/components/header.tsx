@@ -25,16 +25,13 @@ export default function Header() {
         <div className="hidden md:flex flex-none">
           <ul className="menu menu-horizontal px-1 font-sans font-medium">
             <li>
-              <a>Home</a>
+              <a href="#hero">Home</a>
             </li>
             <li>
-              <a>Features</a>
+              <a href="#features">Features</a>
             </li>
             <li>
-              <a>Team</a>
-            </li>
-            <li>
-              <a>Contact</a>
+              <a href="#team">Team</a>
             </li>
           </ul>
         </div>

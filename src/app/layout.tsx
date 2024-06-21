@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from '@/lib/utils'
-import { poppins, josefin_slab } from "@/lib/font";
+import { poppins, josefin_slab, italianno } from "@/lib/font";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-theme="retro">
-      <body className={cn(`${poppins.variable}`, `${josefin_slab.variable}`, 'bg-white')}>
+      <body className={cn(`${poppins.variable}`, `${josefin_slab.variable}`, `${italianno.variable}`, 'bg-white')}>
         {children}
       </body>
     </html>

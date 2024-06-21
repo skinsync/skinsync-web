@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['var(--font-sans)'],
-      serif: ['var(--font-serif)']
+      serif: ['var(--font-serif)'],
+      italiano: ['var(--font-italiano)']
     },
     extend: {
       backgroundImage: {
