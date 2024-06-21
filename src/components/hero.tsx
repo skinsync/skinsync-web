@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -25,7 +26,13 @@ export default function Hero() {
             facial skin type and provide facial skincare Recommendations
             according to your facial skin type.
           </p>
-          <button className="btn btn-primary grow-0">Download Apps</button>
+
+          <Link
+            href="https://drive.google.com/file/d/14wwpM9Pqjyina74Oo2_oazLvEvrJkGok/view?usp=sharing"
+            target="_blank"
+          >
+            <button className="btn btn-primary grow-0">Download Apps</button>
+          </Link>
         </div>
       </div>
     </div>
